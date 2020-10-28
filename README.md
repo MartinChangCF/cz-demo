@@ -34,6 +34,30 @@ brew install pre-commit
 make init
 ```
 
+### Set up default git template (optional)
+
+Create a directory for template folder
+
+```shell
+mkdir ~/.git-template
+```
+
+Set up git to use this folder as the template source
+
+```shell
+git config --global init.templateDir ~/.git-template
+```
+
+Set up git to use this folder as the template source
+
+```shell
+pre-commit init-templatedir ~/.git-template -t commit-msg --hook-type commit-msg
+```
+
+This will help sync the .git/hooks when using `git clone` or `git init`.
+
+> And there is a repo that store all the hooks: [MartinChangCF/git-template](https://github.com/MartinChangCF/git-template)
+
 ## Github Action
 
 You can set up server-side notification if someone's push one or more commit(s).
