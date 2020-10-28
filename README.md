@@ -1,6 +1,6 @@
 # cz-demo
 
-demo basic workflow of using [Commitizen](https://commitizen-tools.github.io/commitizen/).
+Demo basic workflow of using [Commitizen](https://commitizen-tools.github.io/commitizen/).
 
 ## Getting Started
 
@@ -28,11 +28,33 @@ brew install pre-commit
 
 > Using other platform? [FYI](https://pre-commit.com/#installation)
 
-## Running
+### Running
 
 ```shell
 make init
 ```
+
+## Github Action
+
+You can set up server-side notification if someone's push one or more commit(s).
+
+It checks all commits as default and if you only use `cz` in a running project.
+
+You can change the `range` field in `.github/workflows/main.yml`
+
+```yaml
+- uses: MartinChangCF/commitizen-action@0.4.0
+  with:
+    # Commit Ranges for checking, default to recent 5 commits
+    range: v1.0.0...
+```
+
+> `range` is base on [Git Commit Ranges](https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#_commit_ranges)
+
+## Resources
+
+- VS CODE
+  - [Conventional Commits](https://marketplace.visualstudio.com/items?itemName=vivaxy.vscode-conventional-commits)
 
 ## Versioning
 
